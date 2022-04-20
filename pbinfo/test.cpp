@@ -1,28 +1,46 @@
 #include <bits/stdc++.h>
-using namespace std;
+#define sz(a) ((int)((a).size()))
 
-#define ll long long
+using namespace std;
 
 // ifstream cin("a.in");
 // ofstream cout("a.out");
 
-int n;
+typedef long long ll;
+typedef long double ld;
 
-// int solve(int n){
-   
-// }
-
-char s[256];
+int a[51][51], nr;
 
 int main(){
-   ios::sync_with_stdio(false);
-   cin.tie(0);
-   cin.getline(s, 256);
-   for(int i = 0; i < strlen(s); i++){
-      if(strchr("aeiou", s[i]))
-         cout << s[i] << '\n';
-      // cout <<  << '\n';
-   }
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	for(int i = 1; i <= 50; i++){
+		for(int j = 1; j <= 50; j++){
+			if((50*(i-1)+j)%7 == 0 || (50*(i-1)+j)%13 == 0)
+				a[i][j] = 1;
+			else
+				a[i][j] = 0;
+		}
+	}
 
-   return 0;
+	for(int i = 1; i <= 49; i++){
+		for(int j = 1; j <= 49; j++){
+			if(a[i][j] == 0 && a[i][j+1] == 0 || a[i][j] == 0 && a[i+1][j] == 0){
+				nr++;
+			}
+		}
+	}
+	cout << nr;	
+
+
+	// for(int i = 1; i <= 50; i++){
+	// 	for(int j = 1; j <= 50; j++){
+	// 		cout << a[i][j] << ' ';
+	// 	}
+	// 	cout << '\n';
+	// }
+
+
+
+	return 0;
 }
