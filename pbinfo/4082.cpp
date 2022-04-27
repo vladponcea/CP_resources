@@ -3,26 +3,24 @@
 
 using namespace std;
 
-ifstream f("sort.in");
-ofstream g("sort.out");
+// ifstream cin("a.in");
+// ofstream cout("a.out");
 
 typedef long long ll;
 typedef long double ld;
 
 int n;
 
-int sortMin(int n, int x){
+int solve(int n){
 	
 }
 
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	f >> n;
-	f >> x;
-	while(){
+	cin >> n;
+	cout << solve(n);
 
-	}
 
 	return 0;
 }
