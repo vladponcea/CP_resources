@@ -12,9 +12,10 @@ typedef long double ld;
 int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	int x = 8, y = 6;
-	cout << (x-y+3 != 0);
-
+	
+	char s[20];
+	strcpy(s, "FOARTE BINE");
+	cout << s;
 
 	return 0;
 }
