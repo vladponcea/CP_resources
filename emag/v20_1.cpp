@@ -13,18 +13,31 @@ void MinMax(int n, int v[]) {
             mini = v[i];
         }
     }
+    
+    int ok = 0;
+    do {
+        ok = 1;
+        for (int i = 0; i < n-1; i++) {
+            if(v[i] != mini && v[i+1] == mini) {
+                int aux = v[i];
+                v[i] = v[i+1];
+                v[i+1] = aux;
+                ok = 0;
+            }
+        }
+    }while(ok == 0);
 
-    int j = 0, k = n-1;
-    for (int i = 0; i < n; i++) {
-        if(v[i] == maxi) {
-            swap(v[i], v[k]);
-            k--;
+    do {
+        ok = 1;
+        for (int i = 0; i < n-1; i++) {
+            if(v[i] == maxi && v[i+1] != maxi) {
+                int aux = v[i];
+                v[i] = v[i+1];
+                v[i+1] = aux;
+                ok = 0;
+            }
         }
-        if(v[i] == mini) {
-            swap(v[i], v[j]);
-            j++;
-        }
-    }
+    }while(ok == 0);
 }
 
 
