@@ -19,26 +19,63 @@ int32_t main() {
     
 
     f >> c >> n;
-    f >> x;
-    while(x) {
-        if(x%10 != 0) {
-            k = x%10;
-            break;
-        }
-        x /= 10;
-    }
-    v.push_back(x);
-    for (int i = 1; i < n; i++) {
+    
+    if(c == 1) {
         f >> x;
         v.push_back(x);
-    }
+        while(x) {
+            if(x%10 != 0) {
+                k = x%10;
+                break;
+            }
+            x /= 10;
+        }
+        for (int i = 1; i < n; i++) {
+            f >> x;
+            v.push_back(x);
+        }
+        int j = n-1, s = 0;
+        while(k) {
+            s += v[j];
+            j--;
+            k--;
+        }
+        g << s;
+    } else {
+        for (int i = 0; i < n; i++) {
+            f >> x;
+            v.push_back(x);
+        }
 
-    int s = 0;
-    for (int i = n-1; i > n-k; i--) {
-        s += v[i];
-        cout << v[i] << ' '; 
+        int k = 1, s = 1;
+        while(s <= n) {
+            k++;
+            s += k;
+        }
+        k--;
+
+        vector<int> vs;
+        int j = 0;
+        while(j < n) {
+            int a = k;
+            s = 0;
+            while(a) {
+                s += v[j];
+                a--;
+                j++;
+            }
+            vs.push_back(s);
+            k--;
+        }
+        
+        int maxi = 0;
+        for (int i = 0; i < vs.size(); i++) {
+            if(vs[i] > maxi) {
+                maxi = vs[i];
+            }
+        }
+        cout << maxi;
     }
-    cout << s;
 
     return 0;
 }
