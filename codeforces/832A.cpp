@@ -5,22 +5,11 @@ typedef long long ll;
 
 
 int main() {
-    int n, k;
+    int n, k, i = 0, s = 0, l = 0;
     cin >> n >> k;
-    int i = 0, s = 0, l = 0;
-    while(n >= k) {
-        n -= k;
-        if(i%2 == 0)
-            s++;
-        else
-            l++;
-        i++;
-    }
-
-    if(s > l)
+    
+    if((n/k)&1)
         cout << "YES";
     else
         cout << "NO";
-
-    return 0;
 }

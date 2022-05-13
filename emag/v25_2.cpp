@@ -8,6 +8,13 @@ int a[25][25];
 int32_t main() {
     int n, m;
     cin >> n >> m;
+    
+    int x = 0;
+    int v[] = {1, 2, 3};
+    for (int i = 0; i < m; i++) {
+        a[0][i] = v[x];
+    } 
+
 
     for (int i = 1; i < n-1; i++) {
         for (int j = 1; j < m-1; j++) {
