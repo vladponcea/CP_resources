@@ -8,14 +8,8 @@ int main() {
     while(t--) {
         int n;
         cin >> n;
-        
-        if(n < 4)
+        if(n%2)
             cout << -1 << '\n';
-        else if(n == 4)
-            cout << 1 << ' ' << 1 << '\n';
-        else {
-               
-        }
     }
 
     return 0;
