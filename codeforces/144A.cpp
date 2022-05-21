@@ -12,17 +12,19 @@ int main() {
         cin >> val;
     }
     
-    int maxi = INT_MIN, mini = INT_MAX;
+    int maxi = INT_MIN, mini = INT_MAX, x, y;
     for (int i = 0; i < n; i++) {
-        if(v[i] < mini)
+        if(v[i] < mini) {
             mini = v[i];
-        if(v[i] > maxi)
+            x = i;
+        }
+        if(v[i] > maxi) {
             maxi = v[i];
-    }
+            y = i;
+        }
+    }   
 
-    int ans = 0;
-
-    cout << ans << '\n';
+    cout << y - 1 + n - x << '\n';
 
     return 0;
 }
