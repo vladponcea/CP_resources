@@ -3,12 +3,11 @@ using namespace std;
 
 int n, a[100][100];
 
-void f(int x) {
-    cout << x; 
-    while(x > 0) {
-        f(x-1);
-        x -= 1;
-    }
+
+int f(int a, int b) {
+    if(a > b) return a/b+f(a-b, b);
+    if(a < b) return b/a+f(a, b-a);
+    return 1;
 }
 
 int prim(int x) {
@@ -24,5 +23,12 @@ int prim(int x) {
 }
 
 int main(){
-    f(3);
+    char s[20];
+    strcpy(s,"stilou");
+    cout<<s+4<<endl;
+    cout << s[0]-1; 
+    s[0]=s[0]-1; s[1]=s[0]-3;
+    s[2]=s[0]+1; s[3]=s[0]+3;
+    s[4]='\0';
+    cout<<s;
 }
