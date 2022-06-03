@@ -3,6 +3,14 @@ using namespace std;
 
 int n, a[100][100];
 
+int am(int x, int y) {
+    if(x > y)
+        return x%y+am(x-y, y);
+    if(x < y)
+        return y%x+am(x, y-x);
+    return 1;
+}
+
 
 int f(int a, int b) {
     if(a > b) return a/b+f(a-b, b);
@@ -23,12 +31,5 @@ int prim(int x) {
 }
 
 int main(){
-    char s[20];
-    strcpy(s,"stilou");
-    cout<<s+4<<endl;
-    cout << s[0]-1; 
-    s[0]=s[0]-1; s[1]=s[0]-3;
-    s[2]=s[0]+1; s[3]=s[0]+3;
-    s[4]='\0';
-    cout<<s;
+    cout << am(10, 4);
 }
