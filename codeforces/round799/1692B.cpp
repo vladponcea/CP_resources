@@ -9,19 +9,18 @@ int main() {
     while(tt--) {
         int n;
         cin >> n;
-        map<int, int> m;
-        for (int i = 0; i < n; i++) {
+        vector<int> v(n);
+        for(int i = 0; i < n; i++) {
             int x;
             cin >> x;
-            m[x]++;
+            v.push_back(x);
         }
-        
-        vector<int> v;
-        for (int i = 0; i < n; i++) {
 
-        }
+        int s = set<int>(v.begin(), v.end()).size();
+        if(--s%2 != n%2)
+            s -= 1;
+        cout << s << '\n';
     }
-
 
     return 0;
 }

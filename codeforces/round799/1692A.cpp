@@ -10,10 +10,10 @@ int main() {
         int x;
         cin >> x;
         ans = 0;
-        for(int i = 0; i < 3; i++) {
-            int y;
-            cin >> y;
-            if(y > x)
+        for (int i = 0; i < 3; i++){
+            int a;
+            cin >> a;
+            if(a > x)
                 ans++;
         }
         cout << ans << '\n';
