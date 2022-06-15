@@ -1,2 +1,2 @@
-# Pbinfo
-Solved problems from pbinfo + *other resources*
+# Competitive Programming Resources
+Solved problems from pbinfo, codeforces, leetcode + *other resources*
