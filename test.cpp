@@ -1,35 +1,20 @@
-#include <bits/stdc++.h>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
-int n, a[100][100];
+ifstream f("bac.txt");
 
-int am(int x, int y) {
-    if(x > y)
-        return x%y+am(x-y, y);
-    if(x < y)
-        return y%x+am(x, y-x);
-    return 1;
-}
+int x, v[10];
 
+int main() {
 
-int f(int a, int b) {
-    if(a > b) return a/b+f(a-b, b);
-    if(a < b) return b/a+f(a, b-a);
-    return 1;
-}
-
-int prim(int x) {
-    int nr = 0;
-    for (int i = 2; i <= x/2; i++) {
-        if(x%i == 0)
-            nr++;
+    while(f >> x) {
+        v[x]++;
     }
-    if(nr != 0)
-        return 0;
-    else
-        return 1;
-}
 
-int main(){
-    cout << am(10, 4);
+    for (int i = 0; i < 10; i++) {
+        if(v[i] && i%2 == 0)
+            cout << i << ' ';
+    }
+
 }
