@@ -1,30 +1,27 @@
-#include <bits/stdc++.h>
-
+#include<iostream>
 using namespace std;
-typedef long long ll;
-
-int main() {
-    int n;
-    cin >> n;
-    
-    vector<int> v(n);
-    for (int &val : v) {
-        cin >> val;
+int main()
+{
+    int a;
+    cin>>a;
+    int arr[a],ma=0,mi=101,maxi,mini;
+    for(int i=0; i<a; i++)
+    {
+        cin>>arr[i];
+        if(arr[i]>ma)
+        {
+            ma=arr[i];
+            maxi=i;
+        }
+        if(arr[i]<=mi)
+        {
+            mi=arr[i];
+            mini=i;
+        }
     }
-    
-    int maxi = INT_MIN, mini = INT_MAX, x, y;
-    for (int i = 0; i < n; i++) {
-        if(v[i] < mini) {
-            mini = v[i];
-            x = i;
-        }
-        if(v[i] > maxi) {
-            maxi = v[i];
-            y = i;
-        }
-    }   
-
-    cout << y - 1 + n - x << '\n';
-
-    return 0;
+    if(maxi>mini)
+    {
+        mini++;
+    }
+    cout<<maxi+(a-1)-mini;
 }
